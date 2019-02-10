@@ -85,7 +85,7 @@ import中应该准确指明需要引入的模块，不要使用通配符（例�
 
 #### 4.1.1 必须使用大括号
 
-大括号`{}`和`if, else, for, do, while`等语句一起使用，即使其中只有一条语句或是空语句，也必须协商大括号
+大括号`{}`和`if, else, for, do, while`等语句一起使用，即使其中只有一条语句或是空语句，也必须写上大括号
 
 #### 4.1.2 空块使用简洁写法
 
@@ -279,7 +279,7 @@ public protected private abstract static final transient volatile synchronized n
 
 ### 5.1 标识符通用规则
 
-标识符只能使用ASCII字母和数字，即标识符必须匹配正则表达式`w+` 
+标识符只能使用ASCII字母和数字，即标识符必须匹配正则表达式`\w+` 
 
 ### 5.2 标识符类型规则
 
