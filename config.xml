@@ -261,5 +261,30 @@
             <property name="exceptionVariableName" value="expected"/>
         </module>
         <module name="CommentsIndentation"/>
+        <module name="FileLength">
+            <property name="max" value="500"/>
+        </module>
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="60"/>
+            <property name="countEmpty" value="false"/>
+        </module>
+        <module name="ParameterNumber">
+            <property name="max" value="8"/>
+            <property name="tokens" value="METHOD_DEF"/>
+        </module>
+        <module name="VisibilityModifier"/>
+        <module name="BooleanExpressionComplexity">
+            <property name="max" value="6"/>
+        </module>
+        <module name="UnusedImports"/>
+        <module name="AvoidInlineConditionals"/>
+        <module name="ParameterAssignment"/>
+        <module name="NestedForDepth">
+            <property name="max" value="4"/>
+        </module>
+        <module name="NestedIfDepth">
+            <property name="max" value="4"/>
+        </module>
     </module>
 </module>

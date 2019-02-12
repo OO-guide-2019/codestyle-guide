@@ -1,10 +1,10 @@
-## java codestyle guide(simplified version)
+# java codestyle guide(simplified version)
 
 ## 术语说明
 
-注：本指南中带有“（建议）”标志的部分是作者对于某个问题的建议，不一定严格按照给出示例，只是建议的方式，满足要求的都可以。
+P.S.：本指南中带有“（建议）”标志的部分是作者对于某个问题的建议，不一定严格按照给出示例，只是建议的方式，满足要求的方式都可以。
 
-注：在每条代码风格规则中我们会标注config文件中对应的部分
+P.P.S.：在每条代码风格规则中我们会标注`config.xml`文件中对应的部分，一般紧跟着某个小标题之后。
 
 ### **块状结构**
 
@@ -55,8 +55,6 @@
 
 注：一般的缩进单位采取**4个空格**
 
-#### 2.3.3 换行符（TODO)
-
 ------
 
 ## 源文件结构
@@ -93,7 +91,13 @@ import中应该准确指明需要引入的模块，不要使用通配符（例�
 
 每个import语句单独成行。
 
-#### 3.2.3 import顺序（TODO）
+#### 3.2.3 无用的import
+
+```xml
+<module name="UnusedImports"/>
+```
+
+禁止出现没有使用的import
 
 ### 3.3 类声明
 
@@ -416,6 +420,8 @@ long型整型变量的后缀必须使用`L`左右后缀，例如：
 10000000000000L
 ```
 
+------
+
 ## 命名约定
 
 ### 5.1 标识符通用规则
@@ -556,7 +562,105 @@ Prose form                Correct               Incorrect
 "YouTube importer"        YouTubeImporter
 ```
 
+------
+
 ## 设计规范
+
+### 6.1 类长度
+
+```xml
+<module name="FileLength">
+  <property name="max" value="500"/>
+</module>
+```
+
+一个顶级类（即一个文件）最多有500行。
+
+### 6.2 方法长度
+
+```xml
+<module name="MethodLength">
+  <property name="tokens" value="METHOD_DEF"/>
+  <property name="max" value="60"/>
+  <property name="countEmpty" value="false"/>
+</module>
+```
+
+一个方法总长度不得超过60行（不包括其中的空行）。
+
+### 6.3 参数个数
+
+```xml
+<module name="ParameterNumber">
+  <property name="max" value="8"/>
+  <property name="tokens" value="METHOD_DEF"/>
+</module>
+```
+
+一个方法或者构造函数的参数数目不得超过8个。
+
+### 6.4 类成员变量的可见性检查
+
+```xml
+<module name="VisibilityModifier"/>
+```
+
+严格检查类成员变量的可见性。只有被static final修饰的不可变对象，或是被可以是特殊注解修饰的对象才可以为public，其他一律为private
+
+### 6.5 布尔表达式复杂度
+
+```xml
+<module name="BooleanExpressionComplexity">
+  <property name="max" value="5"/>
+</module>
+```
+
+禁止使用过于复杂的布尔表达式，会造成reviewer者阅读困难和更高的debug难度，最大的布尔表达式中运算符个数是5。
+
+### 6.6 禁止嵌套内联条件语句（inline conditions)
+
+```xml
+<module name="AvoidInlineConditionals"/>
+```
+
+例如：
+
+```java
+String a = "oo";
+String b = (a==null || a.length<1) ? null : a.substring(1);
+```
+
+简单来说，对于三目运算符，禁止任何嵌套。如果有类似的逻辑写成显示的if-else语句。
+
+### 6.7 禁止对参数的赋值
+
+```xml
+<module name="ParameterAssignment"/>
+```
+
+禁止对方法中参数的赋值操作。
+
+### 6.8 循环嵌套重数限制
+
+```xml
+<module name="NestedForDepth">
+  <property name="max" value="3"/>
+</module>
+```
+
+对于各类循环语句，限制最大嵌套重数为4。
+
+### 6.9 条件语句嵌套重数限制
+
+```xml
+<module name="NestedIfDepth">
+  <property name="max" value="3"/>
+</module>
+```
+
+对于if-else语句，限制最大嵌套重数为4。
+
+------
 
 ## 编程实践
 
@@ -584,3 +688,9 @@ returnNaiveClassObjectMethod().staticMethod(); // wrong
 ```
 
 对于捕获到的异常，不能ignore，必须进行相应处理，即不允许出现空的catch块，常见的做法有打印日志，或者是再抛出一个`AssertionError` 
+
+------
+
+本指南是基于主流java代码风格指南的简化版，我们基于实际需要进行了一些修改，如有任何建议和问题请联系作者。
+
+email: **niuyazhe@buaa.edu.cn、hansbug@questionor.cn**
