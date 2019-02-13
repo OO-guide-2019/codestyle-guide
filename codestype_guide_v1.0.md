@@ -694,3 +694,4 @@ returnNaiveClassObjectMethod().staticMethod(); // wrong
 本指南是基于主流java代码风格指南的简化版，我们基于实际需要进行了一些修改，如有任何建议和问题请联系作者。
 
 email: **niuyazhe@buaa.edu.cn、hansbug@questionor.cn**
+github repo: https://github.com/OO-guide-2019/codestyle-guide
