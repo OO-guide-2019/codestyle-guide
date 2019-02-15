@@ -38,7 +38,7 @@ P.P.S.：在每条代码风格规则中我们会标注`config.xml`文件中对�
 
 #### 2.3.1 ASCII字符
 
-所有源代码中一律使用ASCII字符，如无特殊注明，使用的非ASCII字符无效。
+所有源代码中一律使用ASCII字符，如无特殊注明，使用的非ASCII字符无效（即尽量不要使用中文注释，学着开始使用英文注释)。
 
 #### 2.3.2 空白字符
 
@@ -196,7 +196,7 @@ for (int i = 0; i < 10; ++i) {
 
 ```xml
 <module name="LineLength">
-	<property name="max" value="100"/>
+	<property name="max" value="80"/>
 	<property name="ignorePattern" value="^package.*|^import.*|
                                           a href|href|http://|https://|ftp://"/>
 </module>
