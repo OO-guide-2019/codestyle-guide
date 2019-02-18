@@ -611,11 +611,11 @@ Prose form                Correct               Incorrect
 
 ```xml
 <module name="BooleanExpressionComplexity">
-  <property name="max" value="5"/>
+  <property name="max" value="6"/>
 </module>
 ```
 
-禁止使用过于复杂的布尔表达式，会造成reviewer者阅读困难和更高的debug难度，最大的布尔表达式中运算符个数是5。
+禁止使用过于复杂的布尔表达式，会造成reviewer者阅读困难和更高的debug难度，最大的布尔表达式中运算符个数是6。
 
 ### 6.6 禁止嵌套内联条件语句（inline conditions)
 
@@ -644,7 +644,7 @@ String b = (a==null || a.length<1) ? null : a.substring(1);
 
 ```xml
 <module name="NestedForDepth">
-  <property name="max" value="3"/>
+  <property name="max" value="4"/>
 </module>
 ```
 
@@ -654,7 +654,7 @@ String b = (a==null || a.length<1) ? null : a.substring(1);
 
 ```xml
 <module name="NestedIfDepth">
-  <property name="max" value="3"/>
+  <property name="max" value="4"/>
 </module>
 ```
 
@@ -694,4 +694,5 @@ returnNaiveClassObjectMethod().staticMethod(); // wrong
 本指南是基于主流java代码风格指南的简化版，我们基于实际需要进行了一些修改，如有任何建议和问题请联系作者。
 
 email: **niuyazhe@buaa.edu.cn、hansbug@questionor.cn**
+
 github repo: https://github.com/OO-guide-2019/codestyle-guide
