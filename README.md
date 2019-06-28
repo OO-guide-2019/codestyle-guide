@@ -62,7 +62,7 @@ A：在我们提供的风格文档中，均将配置文件中的对应部分写�
 
 
 ## 关于作者
- * [PaParaZz1](mailto:niuyazhe@buaa.edu.cn)，邮箱：niuyazhe@buaa.edu.cn
+ * [PaParaZz1]
  * [HansBug](mailto:hansbug@questionor.cn)，邮箱：hansbug@questionor.cn
 
 如有问题或建议，欢迎联系作者。
